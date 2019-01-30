@@ -29,5 +29,7 @@ services:
     volumes:
       - /etc/machine-id:/etc/machine-id
       - /etc/hostname:/etc/hostname:ro
+    security_opt:
+      - seccomp: journalbeat-seccomp.json
     {%- endif %}
 {% endfor %}
